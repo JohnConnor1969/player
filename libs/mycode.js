@@ -3,7 +3,7 @@ window.onload = function(){
   // renderName();
   call_zoom_api("_reg");
   call_zoom_api("_play");
-  channPlay();
+  setTimeout('channPlay()', 4000);
 }
 
 window.onkeyup = function(event) {
