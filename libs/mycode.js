@@ -1,7 +1,9 @@
 window.onload = function(){
 
-  renderName();
+  // renderName();
   call_zoom_api("_reg");
+  call_zoom_api("_play");
+  channPlay();
 }
 
 window.onkeyup = function(event) {
@@ -25,17 +27,27 @@ var number = "263743";
 var respondServers;
 var link;
 
+function channPlay(){
+  canname = respondServers.name;
+  link = respondServers.link;
+  renderName();
+  loadStream(('link').val());
+}
+
 function channNext() {
   call_zoom_api("_next");
   canname = respondServers.name;
+  link = respondServers.link;
   renderName();
+  loadStream(('link').val());
 }
 
 function channPrev() {
   call_zoom_api("_prev");
   canname = respondServers.name;
+  link = respondServers.link;
   renderName();
-
+  loadStream(('link').val());
 }
 
 function switchbar() {
