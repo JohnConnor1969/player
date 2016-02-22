@@ -1,7 +1,6 @@
 window.onload = function(){
 
-  // renderName();
-  call_zoom_api("_reg");
+  regPlayer();
   call_zoom_api("_play");
   setTimeout('channPlay()', 4000);
 }
@@ -21,11 +20,28 @@ window.onkeyup = function(event) {
 }
 
 var site = "78.139.215.205"
-var canname = "server not respond";
+var canname = "";
 var showbar = 0;
-var number = "263743";
+var number;
 var respondServers;
 var link;
+
+function getRandomInt(min, max) {
+  return Math.floor(Math.random()*(max - min + 1)) + min;
+}
+
+function regPlayer() {
+  if (!resumePlayer()){
+    number = getRandomInt(100000,990000);
+    call_zoom_api("_reg");
+    if (respondServers.number == number) {
+      savePlayer();
+    }
+    else {
+      regPlayer();
+    }
+  }
+}
 
 function channPlay(){
   canname = respondServers.name;
@@ -112,3 +128,25 @@ function call_zoom_api(func_name){
 // call_zoom_api("_play");
 // call_zoom_api("_next");
 // call_zoom_api("_prev");
+function resumePlayer() {
+    if (!supportsLocalStorage()) { return false; }
+    // number = (localStorage["player.number"] == "true");
+    if (!(localStorage["player.number"])) { return false; }
+    number = (localStorage["player.number"]);
+    return true;
+}
+
+function savePlayer() {
+    if (!supportsLocalStorage()) { return false; }
+    localStorage["player.number"] = number;
+ 
+    return true;
+}
+
+function supportsLocalStorage() {
+  try {
+    return 'localStorage' in window && window['localStorage'] !== null;
+} catch (e) {
+    return false;
+  }
+}
