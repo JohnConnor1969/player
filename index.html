@@ -24,8 +24,8 @@
 <body>
     <div id="background" class="background"><!-- --></div>
     <div id="header">
-      <div id="logo" class="logo">channel1</div>
-      <div id="time_" class="time">00:00</div>
+      <div id="logo" class="logo"></div>
+      <div id="time" class="time"></div>
     </div>
     <div class="center" id="video">
         <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
@@ -39,7 +39,17 @@
             <param name="wmode" value="window" />
             <param name="FlashVars" value="callback=flashlsCallback" />
 
-            <embed src="flashlsChromeless.swf?inline=1" width="960" height="540" name="moviename" quality="autohigh" bgcolor="#0" align="middle" allowFullScreen="false" allowScriptAccess="always" type="application/x-shockwave-flash" swliveconnect="true" wmode="window" flashVars="callback=flashlsCallback" pluginspage="http://www.macromedia.com/go/getflashplayer" >
+            <embed src="flashlsChromeless.swf?inline=1" width="960" height="540" name="moviename"
+              quality="autohigh"
+              bgcolor="#0"
+              align="middle"
+              allowFullScreen="false"
+              allowScriptAccess="always"
+              type="application/x-shockwave-flash"
+              swliveconnect="true"
+              wmode="window"
+              flashVars="callback=flashlsCallback"
+              pluginspage="http://www.macromedia.com/go/getflashplayer" >
             </embed>
         </object>
     <div id='PlaybackControl'>
@@ -82,6 +92,7 @@ $(document).ready(function() {
     $("#MetricsDisplay").hide();
     $("#StatsDisplay").hide();
     $("#VideoStatus").hide();
+    $("#header").hide();
 
 
     var manifest = decodeURIComponent(location.search.split('src=')[1]);
@@ -91,5 +102,7 @@ $(document).ready(function() {
     $('#streamURL').val(manifest);
 })
 </script>
+<script type="text/javascript" src="libs/mycode.js"></script>
+
 </body>
 </html>
