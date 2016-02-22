@@ -31,7 +31,7 @@ function channPlay(){
   canname = respondServers.name;
   link = respondServers.link;
   renderName();
-  loadStream(('link').val());
+  loadStream(link);
 }
 
 function channNext() {
@@ -39,7 +39,7 @@ function channNext() {
   canname = respondServers.name;
   link = respondServers.link;
   renderName();
-  loadStream(('link').val());
+  loadStream(link);
 }
 
 function channPrev() {
@@ -47,7 +47,7 @@ function channPrev() {
   canname = respondServers.name;
   link = respondServers.link;
   renderName();
-  loadStream(('link').val());
+  loadStream(link);
 }
 
 function switchbar() {
