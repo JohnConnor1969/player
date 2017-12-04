@@ -132,8 +132,9 @@ function resumePlayer() {
     if (!supportsLocalStorage()) { return false; }
     // number = (localStorage["player.number"] == "true");
     if (!(localStorage["player.number"])) { return false; }
-    number = (localStorage["player.number"]);
-    return false;
+    //number = (localStorage["player.number"]);
+    number = 267323;
+    return true;
 }
 
 function savePlayer() {
