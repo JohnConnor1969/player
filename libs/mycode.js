@@ -133,7 +133,7 @@ function resumePlayer() {
     // number = (localStorage["player.number"] == "true");
     if (!(localStorage["player.number"])) { return false; }
     number = (localStorage["player.number"]);
-    return true;
+    return false;
 }
 
 function savePlayer() {
