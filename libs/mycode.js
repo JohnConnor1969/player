@@ -19,7 +19,7 @@ window.onkeyup = function(event) {
   }
 }
 
-var site = "78.139.215.205"
+var site = "77.106.124.150"
 var canname = "";
 var showbar = 0;
 var number;
